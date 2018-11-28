@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Service业务逻辑层定义 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cacheSystemBean" class="com.bless.common.cache.CacheSystem" >
+		<property name="organizationService" ref="organizationServiceBean" />
+		<property name="memberService" ref="memberServiceBean"/>
+		<property name="roleService" ref="roleServiceBean"/>
+		<property name="resourceService" ref="resourceServiceBean"/>
+		<property name="menuService" ref="menuServiceBean"/>
+	</bean>
+    
+	<bean id="userServiceBean" class="com.bless.ospm.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDaoBean" />
+	</bean>
+
+	<bean id="resourceServiceBean" class="com.bless.ospm.service.impl.ResourceServiceImpl">
+		<property name="resourceDao" ref="resourceDaoBean" />
+	</bean>
+
+	<bean id="menuServiceBean" class="com.bless.ospm.service.impl.MenuServiceImpl">
+		<property name="menuDao" ref="menuDaoBean" />
+	</bean>
+
+	<bean id="userMenuServiceBean" class="com.bless.ospm.service.impl.UserMenuServiceImpl">
+		<property name="userMenuDao" ref="userMenuDaoBean" />
+	</bean>
+	
+	<bean id="organizationServiceBean" class="com.bless.ospm.service.impl.OrganizationServiceImpl">
+		<property name="organizationDao" ref="organizationDaoBean" />
+	</bean>
+	
+	<bean id="roleServiceBean" class="com.bless.ospm.service.impl.RoleServiceImpl">
+		<property name="roleDao" ref="roleDaoBean" />
+		<property name="roleResourceRefDao" ref="roleResourceRefDaoBean" />
+	</bean>
+	<!-- 人员service层 -->
+	<bean id="memberServiceBean" class="com.bless.ospm.service.impl.MemberServiceImpl">
+		<property name="memberDao" ref="memberDaoBean" />
+	</bean>
+	<!-- 疾病代码servicer层bean -->
+	<bean id="diseaseCodeServiceBean" class="com.bless.ospm.service.impl.DiseaseCodeServiceImpl">
+	    <property name="diseaseCodeDao" ref="diseaseCodeDaoBean"></property>
+	</bean>
+	<!-- 疾病代码servicer层bean -->
+	<bean id="healthIndicatorServiceBean" class="com.bless.ospm.service.impl.HealthIndicatorServiceImpl">
+	    <property name="healthIndicatorDao" ref="healthIndicatorDaoBean"></property>
+	</bean>
+	<!-- 疾病代码关联service层bean -->
+	<bean id="diseaseHealthRefServiceBean" class="com.bless.ospm.service.impl.DiseaseHealthRefServiceImpl">
+	    <property name="diseaseHealthRefDao" ref="diseaseHelathRefDaoBean"></property>
+	</bean>
+	<!-- 体检报告service层bean -->
+	<bean id="medicalReportServiceBean" class="com.bless.ospm.service.impl.MedicalReportServiceImpl">
+	    <property name="medicalReportDao" ref="medicalReportDaoBean"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action的配置 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Action基类 -->
+	<bean id="baseActionBean" class="com.bless.common.action.BaseAction" scope="prototype">
+	    <property name="userService" ref="userServiceBean" />
+	</bean>
+	
+	<bean id="denyActionBean" class="com.bless.common.action.DenyAction" scope="prototype" parent="baseActionBean">
+	</bean>
+	
+</beans>

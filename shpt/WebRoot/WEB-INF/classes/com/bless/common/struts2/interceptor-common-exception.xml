@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="bless-default" extends="struts-default" >
+		<interceptors>
+			 <interceptor  
+				class="com.bless.common.interceptor.ExceptionHandler"  
+				name="exceptionInterceptor"/>  
+			<interceptor  
+				class="com.bless.common.interceptor.JsonAjaxExceptionHandler"  
+				name="jsonAjaxExceptionInterceptor"/>
+			<interceptor  
+				class="com.bless.common.interceptor.SimpleAjaxExceptionHandler"  
+				name="simpleAjaxExceptionHandler"/>
+			
+			<!--①定义一个包含异常处理的拦截器栈-->  
+			<interceptor-stack name="exceptionStack">
+				<!-- 默认的拦截器 -->
+				<interceptor-ref name="defaultStack"/>
+				<!-- 异常拦截器 -->
+				<interceptor-ref name="exceptionInterceptor"/>
+			</interceptor-stack>
+			
+			<!-- ②针对Ajax返回json定制的拦截器 -->
+			<interceptor-stack name="jsonAjaxStack">
+				<!-- 默认的拦截器 -->
+				<interceptor-ref name="defaultStack"/>
+				<!-- 异常拦截器 -->
+				<interceptor-ref name="jsonAjaxExceptionInterceptor"/>
+			</interceptor-stack>
+			
+			<!-- ③针对Ajax返回普通数据类型定制的拦截器 -->
+			<interceptor-stack name="simpleAjaxStack">
+				<!-- 默认的拦截器 -->
+				<interceptor-ref name="defaultStack"/>
+				<!-- 异常拦截器 -->
+				<interceptor-ref name="simpleAjaxExceptionHandler"/>
+			</interceptor-stack>
+			
+			<!-- ④需要用到chain跳转的拦截器栈 -->
+			<interceptor-stack name="chainStack">
+				<interceptor-ref name="chain"/>
+				<interceptor-ref name="basicStack"/>
+				<interceptor-ref name="exceptionInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 默认运行的拦截器栈 -->
+		<default-interceptor-ref name="exceptionStack" /> 
+		
+		<global-results>
+			<result name="error" >/Web/common/page/error.jsp</result>
+		</global-results>
+		 <!-- 
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		 -->
+	</package>
+</struts>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.bless.ospm.model.base.Menu" table="menu"
+		catalog="shpt">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="resource" class="com.bless.ospm.model.base.Resource"
+			fetch="select" lazy="false">
+			<column name="resource" />
+		</many-to-one>
+		<property name="name" type="string">
+			<column name="name" length="40" />
+		</property>
+		<property name="description" type="string">
+			<column name="description" length="200" />
+		</property>
+		<property name="parentId" type="java.lang.Long">
+			<column name="parent_id" />
+		</property>
+		<property name="codeNo" type="java.lang.Long">
+			<column name="code_no">
+				<comment>
+					&#178;&#203;&#181;&#165;&#215;&#220;&#184;&#246;&#202;&#253;&#202;&#199;&#210;&#187;&#182;&#168;&#181;&#196;&#161;&#163;&#189;&#171;&#207;&#181;&#205;&#179;&#214;&#208;&#203;&#249;&#211;&#195;&#181;&#189;&#181;&#196;&#178;&#203;&#181;&#165;&#182;&#188;&#182;&#168;&#210;&#229;&#210;&#187;&#184;&#246;&#206;&#168;&#210;&#187;&#181;&#196;&#177;&#224;&#186;&#197;&#163;&#172;&#185;&#169;&#199;&#176;&#204;&#168;&#215;&#246;&#194;&#223;&#188;&#173;&#197;&#208;&#182;&#207;&#161;&#163;&#178;&#203;&#181;&#165;&#214;&#187;&#204;&#225;&#185;&#169;&#208;&#222;&#184;&#196;&#195;&#251;&#179;&#198;&#178;&#217;&#215;&#247;&#161;&#163;</comment>
+			</column>
+		</property>
+		<property name="porder" type="java.lang.Long">
+			<column name="porder" />
+		</property>
+		<property name="status" type="java.lang.Byte">
+			<column name="status">
+				<comment>0&#213;&#253;&#179;&#163;1&#189;&#251;&#211;&#195;2&#201;&#190;&#179;&#253;</comment>
+			</column>
+		</property>
+		<set name="userMenus" table="user_menu" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="menu_id" />
+			</key>
+			<one-to-many class="com.bless.ospm.model.base.UserMenu" />
+		</set>
+	</class>
+</hibernate-mapping>

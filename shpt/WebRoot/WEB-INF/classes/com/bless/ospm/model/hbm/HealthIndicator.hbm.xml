@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-5-17 11:14:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bless.ospm.model.base.HealthIndicator" table="health_indicator" catalog="shpt">
+        <id name="id" type="string">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="maxvalue" type="string">
+            <column name="max_value" length="100" />
+        </property>
+        <property name="minvalue" type="string">
+            <column name="min_value" length="100" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="100" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="3999" />
+        </property>
+          <property name="createTime" type="date">
+            <column name="create_time"  />
+        </property>
+          <property name="modifyTime" type="date">
+            <column name="modify_time"  />
+        </property>
+          <property name="status" type="java.lang.Byte">
+            <column name="status_h"/>
+               
+        </property>
+   </class>
+</hibernate-mapping>

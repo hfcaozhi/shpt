@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="test.Organization" table="organization" catalog="igov">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="40" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="40" />
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="parent_id" />
+        </property>
+        <set name="events" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="org_id" />
+            </key>
+            <one-to-many class="test.Event" />
+        </set>
+        <set name="userOrgRefs" table="user_org_ref" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="org_id" />
+            </key>
+            <one-to-many class="test.UserOrgRef" />
+        </set>
+        <set name="members" table="member" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="org_id" />
+            </key>
+            <one-to-many class="test.Member" />
+        </set>
+    </class>
+</hibernate-mapping>

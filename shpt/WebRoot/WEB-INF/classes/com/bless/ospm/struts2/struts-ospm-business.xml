@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="denyPackage" extends="bless-default" namespace="/join">
+		<action name="deny" class="denyActionBean" method="deny">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+	</package>
+
+	<package name="menuPackage" extends="bless-default" namespace="/join">
+		<action name="menu*JS" class="menuActionBean" method="menu{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toMenuPage" class="menuActionBean" method="toMenuPage">
+			<result>/Web/shpt/menu/page/menuMain.jsp</result>
+		</action>
+		
+	</package>
+
+
+	<package name="orgPackage" extends="bless-default" namespace="/join">
+		<action name="org*JS" class="organizationActionBean" method="org{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toOrgPage" class="organizationActionBean" method="toOrgPage">
+			<result>/Web/shpt/org/page/orgMain.jsp</result>
+		</action>
+
+	</package>
+
+	<package name="rolePackage" extends="bless-default" namespace="/join">
+		<action name="role*JS" class="roleActionBean" method="role{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toRolePage" class="roleActionBean" method="toRolePage">
+			<result>/Web/shpt/role/page/roleMain.jsp</result>
+		</action>
+
+	</package>
+
+	<package name="userPackage" extends="bless-default" namespace="/join">
+		<action name="user*JS" class="userActionBean" method="user{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toUserPage" class="userActionBean" method="toUserPage">
+			<result>/Web/shpt/user/page/userMain.jsp</result>
+		</action>
+	</package>
+
+	<package name="resourcePackage" extends="bless-default"
+		namespace="/join">
+		<action name="resource*JS" class="resourceActionBean" method="resource{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toResourcePage" class="resourceActionBean"
+			method="toResourcePage">
+			<result>/Web/shpt/resource/page/resourceMain.jsp</result>
+		</action>
+	</package>
+
+	<package name="privilegePackage" extends="bless-default"
+		namespace="/join">
+		<action name="privilege*JS" class="privilegeActionBean" method="privilege{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+		<action name="doGetPrivilegeTree" class="privilegeActionBean"
+			method="doGetPrivilegeTree">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+		
+	</package>
+
+	<package name="cachePackage" extends="bless-default" namespace="/join">
+		<action name="cache*JS" class="cacheActionBean" method="cache{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+	</package>
+	<!-- 疾病代码配置 -->
+    <package name="diseaseCodePackage" extends="bless-default" namespace="/join">
+		<action name="diseaseCode*JS" class="diseaseCodeActionBean" method="diseaseCode{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+
+		<action name="toDiseaseCode" class="diseaseCodeActionBean" method="toDisaseCodePage">
+			<result>/Web/shpt/diseaseCode/page/diseaseCodeList.jsp</result>
+		</action>
+	 </package>
+	 	<!-- 健康指标配置 -->
+    <package name="healthIndicatorPackage" extends="bless-default" namespace="/join">
+		<action name="toHealthIndicator" class="healthIndicatorActionBean" method="toHealthIndicator">
+			<result>/Web/shpt/healthIndicator/page/healthIndicatorList.jsp</result>
+		</action>
+		<action name="healthIndicator*JS" class="healthIndicatorActionBean" method="healthIndicator{1}JS">
+			<interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+		</action>
+	 </package>
+	 <!-- 体检人员配置 -->
+	 <package name="memberPackage" extends="bless-default" namespace="/join">
+	    <action name="toMemberPage" class="memberActionBean" method="toMember">
+              <result>/Web/shpt/member/page/memberList.jsp</result>	   
+        </action>
+        <action name="member*JS" class="memberActionBean" method="member{1}JS">
+             <interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+        </action>
+	 </package>
+	 <!--  -->
+	 <package name="medicalReportPackage" extends="bless-default" namespace="/join">
+	    <action name="toMedicalReportJS" class="medicalReportActionBean" method="toMedicalReportJS">
+	        <result>/Web/shpt/medicalReport/page/medicalReportList.jsp</result>
+	    </action>
+	    <action name="medicalReport*JS" class="medicalReportActionBean" method="medicalReport{1}JS">
+             <interceptor-ref name="jsonAjaxStack"></interceptor-ref>
+        </action>
+	 </package>
+	
+
+</struts>

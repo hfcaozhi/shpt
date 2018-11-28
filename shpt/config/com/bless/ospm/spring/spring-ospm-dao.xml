@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dao层的配置信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Dao层基础实现类  --> 
+    <bean id="userDaoBean" class="com.bless.ospm.dao.impl.UserDaoImpl" parent="baseDaoBean"></bean>
+    <bean id="organizationDaoBean" class="com.bless.ospm.dao.impl.OrganizationDaoImpl" parent="baseDaoBean"></bean>
+    <bean id="resourceDaoBean" class="com.bless.ospm.dao.impl.ResourceDaoImpl" parent="baseDaoBean"></bean>
+    <bean id="roleDaoBean" class="com.bless.ospm.dao.impl.RoleDaoImpl" parent="baseDaoBean"></bean>
+    <bean id="userRoleRefDaoBean" class="com.bless.ospm.dao.impl.UserRoleRefDaoImpl" parent="baseDaoBean"></bean>
+    
+    <bean id="menuDaoBean" class="com.bless.ospm.dao.impl.MenuDaoImpl" parent="baseDaoBean"></bean>
+    <bean id="userMenuDaoBean" class="com.bless.ospm.dao.impl.UserMenuDaoImpl" parent="baseDaoBean"></bean>
+    
+    <bean id="roleResourceRefDaoBean" class="com.bless.ospm.dao.impl.RoleResourceRefDaoImpl" parent="baseDaoBean"></bean>
+    <!-- 人员dao层实现类 -->
+    <bean id="memberDaoBean" class="com.bless.ospm.dao.impl.MemberDaoImpl" parent="baseDaoBean"></bean>
+    <!-- 疾病代码dao层实现类 -->
+    <bean id="diseaseCodeDaoBean" class="com.bless.ospm.dao.impl.DiseaseCodeDaoImpl" parent="baseDaoBean"></bean>
+     <!-- 健康指标dao层实现类 -->
+    <bean id="healthIndicatorDaoBean" class="com.bless.ospm.dao.impl.HealthIndicatorDaoImpl" parent="baseDaoBean"></bean>
+    <!-- 疾病代码指标关联 -->
+    <bean id="diseaseHelathRefDaoBean" class="com.bless.ospm.dao.impl.DiseaseHealthRefDaoImpl" parent="baseDaoBean"></bean>
+    <!-- 体检报告dao层实现类 -->
+    <bean id="medicalReportDaoBean" class="com.bless.ospm.dao.impl.MedicalReportDaoImpl" parent="baseDaoBean"></bean>
+</beans>

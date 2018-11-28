@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-5-17 11:14:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bless.ospm.model.base.MedicalReport" table="medical_report" catalog="shpt">
+        <id name="id" type="string">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="medicalReport" type="string">
+            <column name="medical_report"  />
+        </property>
+        <property name="medicalId" type="string">
+            <column name="medical_id"  />
+        </property>
+        <property name="patid" type="string">
+            <column name="patid"  />
+        </property>
+        <property name="medicalTime" type="java.util.Date">
+            <column name="medical_time"  />
+        </property>
+        <property name="medicalResult" type="string">
+            <column name="medical_result"  />
+        </property>
+        <property name="medicalProject" type="string">
+            <column name="medical_project"  />
+        </property>
+        <property name="assessStatus" type="java.lang.Integer">
+            <column name="assess_status"  />
+        </property>
+        <property name="assessTime" type="java.util.Date">
+            <column name="assess_time"  />
+        </property>
+        <property name="assessSuggestion" type="string">
+            <column name="assess_suggestion"  />
+        </property>
+        <property name="auditingStatus" type="java.lang.Integer">
+            <column name="auditing_status"  />
+        </property>
+        <property name="auditingTime" type="java.util.Date">
+            <column name="auditing_time"  />
+        </property>
+        <property name="auditingSuggestion" type="string">
+            <column name="auditing_Suggestion"  />
+        </property>
+        <property name="prescribeSuggestion" type="string">
+            <column name="prescribe_suggestion"  />
+        </property>
+        <property name="prescribeStatus" type="java.lang.Integer">
+            <column name="prescribe_status"  />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time"  />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status"  />
+        </property>
+        <property name="stampTime" type="java.util.Date">
+            <column name="stamp_time"  />
+        </property>
+        <property name="stampStatus" type="java.lang.Integer">
+            <column name="stamp_status"  />
+        </property>
+        <property name="stampUser" type="string">
+            <column name="stamp_user"  />
+        </property>
+        <property name="stampCount" type="java.lang.Integer">
+            <column name="stamp_count"  />
+        </property>
+        <property name="modifyTime" type="java.util.Date">
+            <column name="modify_time"  />
+        </property>
+        <property name="delFlg" type="java.lang.Byte">
+            <column name="del_flg"  />
+        </property>
+        <property name="auditingUser" type="string">
+            <column name="auditing_user"  />
+        </property>
+        <property name="assessUser" type="string">
+            <column name="assess_user"  />
+        </property>
+          <set name="medicalProjects" table="medical_project" inverse="false" lazy="false" fetch="select">
+            <key>
+                <column name="medical_report" />
+            </key>
+            <one-to-many class="com.bless.ospm.model.base.MedicalProject" />
+        </set>
+        
+        
+        
+   </class>
+</hibernate-mapping>

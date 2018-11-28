@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="test.MendRecord" table="mend_record" catalog="igov">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="car" class="test.Car" fetch="select">
+            <column name="car_id" />
+        </many-to-one>
+        <property name="createTime" type="date">
+            <column name="create_time" length="10" />
+        </property>
+        <property name="cost" type="java.lang.Float">
+            <column name="cost" precision="6" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <property name="mendUser" type="string">
+            <column name="mend_user" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

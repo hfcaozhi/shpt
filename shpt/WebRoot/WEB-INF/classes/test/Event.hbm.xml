@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="test.Event" table="event" catalog="igov">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="law" class="test.Law" fetch="select">
+            <column name="law" />
+        </many-to-one>
+        <many-to-one name="crim" class="test.Crim" fetch="select">
+            <column name="crim_id" />
+        </many-to-one>
+        <many-to-one name="term" class="test.Term" fetch="select">
+            <column name="term" />
+        </many-to-one>
+        <many-to-one name="organization" class="test.Organization" fetch="select">
+            <column name="org_id" />
+        </many-to-one>
+        <property name="code" type="string">
+            <column name="code" length="40" />
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="40" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="reporter" type="string">
+            <column name="reporter" length="20" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <property name="operAddress" type="string">
+            <column name="oper_address" length="200" />
+        </property>
+        <property name="process" type="string">
+            <column name="process" length="20" />
+        </property>
+        <property name="processMethod" type="string">
+            <column name="process_method" length="20" />
+        </property>
+        <property name="methodIntro" type="string">
+            <column name="method_intro" length="200" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19" />
+        </property>
+        <property name="illegal" type="string">
+            <column name="illegal" length="200" />
+        </property>
+        <property name="resule" type="string">
+            <column name="resule" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

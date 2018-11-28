@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="test.UserRoleRef" table="user_role_ref" catalog="igov">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="test.User" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+        <many-to-one name="role" class="test.Role" fetch="select">
+            <column name="role_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

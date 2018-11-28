@@ -1,0 +1,254 @@
+.zm_body{
+	 position: relative;
+	 width: 420px;
+	 height:300px;
+	 overflow: auto;
+	}
+.zm_root{
+	font-family:Arial;
+	font-size:15px;
+	color:#79798c;
+	position:relative;
+	width:400px;
+	height:20px;
+	font-weight:blod;
+}
+.zm_root_opreate{
+	width:200px;
+	height:20px;
+	float:right;
+}
+.zm_root_opreate div{
+	float:left;
+	font-size:12px;
+	line-height:20px;
+	margin-left:12px;
+	width:25px;
+}
+.zm_root div.zm_root_pic{
+	float:left;
+	width:20px;
+	height:18px;
+	background-image:url('../images/tree.png');
+	cursor:pointer;
+}
+.zm_accordion{
+	font-family:Arial;
+	font-size:12px;
+	width:380px;
+	margin-left: 20px;
+}
+.zm_accordion ul{
+	list-style:none;
+	margin:0px 0px;
+	padding:0px 0px;
+	
+}
+.zm_accordion ul li.zm_menu{
+	background-repeat:repeat-x;
+	line-height:20px;
+}
+.zm_icon{
+	background-image:url('../images/tree.png');
+	width:24px;
+	height:20px;
+	float:left;
+	margin:0px 0px;
+	cursor:pointer;
+}
+.zm_move_a{
+	background-position-y:-50px;
+}
+.zm_move_b{
+	background-position-y:-100px;
+}
+.zm_move_c{
+	background-position-y:-150px;
+}
+.zm_move_d{
+	background-position-y:-200px;
+}
+.zm_move_e{
+	background-position-y:-250px;
+}
+.zm_move_f{
+	background-position-y:-300px;
+}
+.zm_move_g{
+	background-position-y:-350px;
+}
+.zm_move_h{
+	background-position-y:-400px;
+}
+.zm_move_i{
+	background-position-y:-450px;
+}
+.zm_move_j{
+	background-position-y:-500px;
+}
+.zm_move_k{
+	background-position-y:-400px;
+}
+div.zm_accordion ul li.zm_menu ul{
+	color:#808080;
+	list-style:none;
+	display:none;
+}
+.zm_item{
+	background-image:url('../images/tree.png');
+	background-repeat:no-repeat;
+	padding-left:30px;
+	height:18px;
+	font-size:10px;
+	line-height:18px;
+}
+.zm_pic{
+	float:left;
+	width:20px;
+	height:15px;
+	background-image:url('../images/tree.png');
+	background-repeat:no-repeat;
+	background-position-x:-5px;
+	margin:0px 0px;
+	padding:0px 0px;
+}
+
+.zm_opreate{
+	margin:0px;
+	padding:0px;
+	position:relative;
+	display:inline-block;
+	width:200px;
+	height:18px;
+	float:right;
+	
+}
+.zm_opreate div{
+	margin-left:10px;
+	width:25px;
+	height:18xp;
+	display:inline-block;
+	float:center;
+}
+.zm_hr{
+	color: #E1ECFF;
+	
+}
+/**********************************************/
+.zm_folder{
+	background-image:url('../images/tree.png');
+	background-repeat:no-repeat;
+	width:24px;
+	height:18px;
+	float:left;
+	margin:0px 0px;
+	position:relative;
+	cursor:pointer;
+}
+.zm_accorder_border{
+	width:900px;
+}
+.zm_folder_title{
+	position:relative;
+	display:inline-block;
+	width:700px;
+	height:18px;
+	float:right;
+}
+.zm_folder_title div{
+	text-align:center;
+	height:18px;
+	line-height:18px;
+	margin-top:-10px;
+	display:inline-block;
+}
+.opreate_content{
+}
+.opreate_a{
+	width:400px;
+}
+
+.opreate_b{
+	width:280px;
+}
+.zm_title{
+	font-size:15px;
+}
+
+.zm_opreate_menu{
+	background-repeat:repeat-y;
+	line-height:20px;
+	padding-left:30px;
+	background-image:url('../images/opreate.png');
+	background-position:4px;
+}
+.zm_opreate_item{
+	background-image:url('../images/tree.png');
+	background-repeat:no-repeat;
+	padding-left:50px;
+	height:18px;
+	font-size:10px;
+	line-height:18px;
+}
+.zm_opreate_pic{
+	width:800px;
+	height:15px;
+	background-image:url('../images/tree.png');
+	background-repeat:no-repeat;
+	background-position-x:-5px;
+	margin:0px 0px;
+	padding-left:20px;
+}
+.zm_content{
+	position:relative;
+	border:1px solid #8DB2E3;
+	width:1100px;
+	
+}
+/*±³¾°*/
+.zm_background{
+	position: absolute;
+	width:1080px;
+	height:18px;
+	margin-left: -20px;
+	padding-left: 20px;
+}
+.zm_background_over{
+	background-color: #E1ECFF;
+}
+.zm_background_click{
+	background-color: #FBEC88;
+}
+.zm_background_a{
+	margin-left: -70px;
+	padding-left: 44px;
+	width:1056px;
+}
+.zm_body_title{
+	position: relative;
+	background-image:url('../images/title_pic.png');
+	width:1095px;
+	height:28px;
+	background-repeat: repeat-x;
+	line-height: 28px;
+	font-weight: bold;
+	padding-left:5px;
+	color: #0E2D5F;
+}
+.zm_body_search{
+	position: relative;
+	width:1100px;
+	height:35px;
+	background-color: #F4F4F4;
+}
+.zm_content_color{
+	position: absolute;
+	width:1080px;
+	height:18px;
+	margin-left: -20px;
+	padding-left: 20px;
+	background-color: #F4F4F4;
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+}
+/**********************************************/

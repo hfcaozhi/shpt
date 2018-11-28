@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-3 11:33:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="test.Crim" table="crim" catalog="igov">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="20" />
+        </property>
+        <property name="sex" type="java.lang.Byte">
+            <column name="sex">
+                <comment>0 &#196;&#208; 1 &#197;&#174;</comment>
+            </column>
+        </property>
+        <property name="unId" type="string">
+            <column name="un_id" length="40" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="30" />
+        </property>
+        <property name="motorId" type="string">
+            <column name="motor_id" length="40" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="tempAddress" type="string">
+            <column name="temp_address" length="200" />
+        </property>
+        <property name="condition" type="string">
+            <column name="condition" length="20" />
+        </property>
+        <property name="type" type="java.lang.Byte">
+            <column name="type">
+                <comment>0 &#184;&#246;&#200;&#203; 1 &#183;&#168;&#200;&#203;&#187;&#242;&#215;&#233;&#214;&#175;</comment>
+            </column>
+        </property>
+        <property name="firmName" type="string">
+            <column name="firm_name" length="80" />
+        </property>
+        <property name="personInLaw" type="string">
+            <column name="person_in_law" length="20" />
+        </property>
+        <property name="regAddress" type="string">
+            <column name="reg_address" length="200" />
+        </property>
+        <property name="openAddress" type="string">
+            <column name="open_address" length="200" />
+        </property>
+        <property name="businessLicense" type="string">
+            <column name="business_license" length="100" />
+        </property>
+        <property name="firmType" type="string">
+            <column name="firm_type" length="20" />
+        </property>
+        <property name="agent" type="string">
+            <column name="agent" length="20" />
+        </property>
+        <set name="events" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="crim_id" />
+            </key>
+            <one-to-many class="test.Event" />
+        </set>
+    </class>
+</hibernate-mapping>

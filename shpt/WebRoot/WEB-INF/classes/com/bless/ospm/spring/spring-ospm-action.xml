@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action的配置 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Action基类 -->
+	<bean id="loginInfoActionBean" class="com.bless.ospm.action.LoginInfoAction" scope="prototype">
+		<property name="loginInfoService" ref="loginInfoServiceBean"/>
+	</bean>
+	
+	<bean id="privilegeActionBean" class="com.bless.ospm.action.PrivilegeAction" scope="prototype">
+		<property name="resourceService" ref="resourceServiceBean"/>
+	</bean>
+	<!-- 人员action层 -->
+	<bean id="memberActionBean" class="com.bless.ospm.action.MemberAction" scope="prototype" parent="baseActionBean">
+		<property name="memberService" ref="memberServiceBean"></property>
+		<property name="userService" ref="userServiceBean"></property>
+		
+	</bean>
+	
+	<bean id="menuActionBean" class="com.bless.ospm.action.MenuAction" scope="prototype" parent="baseActionBean">
+		<property name="userMenuService" ref="userMenuServiceBean"/>
+		<property name="menuService" ref="menuServiceBean"/>
+		<property name="cacheSystem" ref="cacheSystemBean"/>
+	</bean>
+	
+	<bean id="organizationActionBean" class="com.bless.ospm.action.OrganizationAction" scope="prototype" parent="baseActionBean">
+		<property name="organizationService" ref="organizationServiceBean"/>
+		<property name="cacheSystem" ref="cacheSystemBean"/>
+	</bean>
+	
+	<bean id="roleActionBean" class="com.bless.ospm.action.RoleAction" scope="prototype" parent="baseActionBean">
+		<property name="roleService" ref="roleServiceBean"/>
+	</bean>
+	
+	<bean id="userActionBean" class="com.bless.ospm.action.UserAction" scope="prototype" parent="baseActionBean">
+		<property name="userService" ref="userServiceBean"/>
+	</bean>
+	
+	<bean id="resourceActionBean" class="com.bless.ospm.action.ResourceAction" scope="prototype" parent="baseActionBean">
+		<property name="resourceService" ref="resourceServiceBean"/>
+		<property name="cacheSystem" ref="cacheSystemBean"/>
+	</bean>
+	
+	<bean id="cacheActionBean" class="com.bless.ospm.action.CacheAction" scope="prototype" parent="baseActionBean">
+		<property name="cacheSystem" ref="cacheSystemBean"/>
+	</bean>
+	<!-- 疾病代码action层 -->
+	<bean id="diseaseCodeActionBean" class="com.bless.ospm.action.DiseaseCodeAction">
+	    <property name="diseaseCodeService" ref="diseaseCodeServiceBean"></property>
+	    <property name="healthIndicatorService" ref="healthIndicatorServiceBean"></property>
+	    <property name="diseaseHealthRefService" ref="diseaseHealthRefServiceBean"></property>
+	    
+	</bean>
+	<!-- 健康指标action层 -->
+	<bean id="healthIndicatorActionBean" class="com.bless.ospm.action.HealthIndicatorAction">
+	   <property name="healthIndicatorService" ref="healthIndicatorServiceBean"></property>
+	</bean>
+	<!-- 体检报告action层 -->
+	<bean id="medicalReportActionBean" class="com.bless.ospm.action.MedicalReportAction">
+	   <property name="medicalReportService" ref="medicalReportServiceBean"></property>
+	</bean>
+	
+	
+</beans>
